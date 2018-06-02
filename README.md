@@ -1,0 +1,2 @@
+# leetcode
+Imporve the alogrithm!
