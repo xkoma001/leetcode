@@ -1,0 +1,32 @@
+map = {'I':1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
+
+
+def romanToInt(s):
+    num, pre = 0, 1000
+    for i in [map[j] for j in s]:
+        num, pre = num + i - 2*pre if i > pre else num + i, i
+    return num
+
+
+def partion(p, q, nums):
+    i = p-1
+    for j in range(p, q):
+        if nums[j] <= nums[q]:
+            i += 1
+            nums[i], nums[j] = nums[j], nums[i]
+    nums[i+1], nums[q] = nums[q], nums[i+1]
+    return i+1
+
+
+def quick_sort(p, q, nums):
+    if p < q:
+        pos = partion(p, q, nums)
+        quick_sort(p, pos-1, nums)
+        quick_sort(pos+1, q, nums)
+    return nums
+
+if __name__ == '__main__':
+    s = 'CM'
+    print(romanToInt(s))
+    a = [3, 5,6, 2,1]
+    print(quick_sort(0, len(a)-1, a))
