@@ -1,2 +1,2 @@
 # leetcode
-Improve the alogrithm!
+Improve the algorithm!
