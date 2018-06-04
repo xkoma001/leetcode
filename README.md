@@ -1,0 +1,2 @@
+# leetcode
+Improve the algorithm!
